@@ -1,19 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #222;
   color: white;
   font-family: 'Noto Sans TC', sans-serif;
+  margin: 0;
+}
+
+section {
+  margin: 32px 0;
 }
 
 .row {
   display: flex;
 }
+
 .text-center {
   text-align: center;
 }
 
 .container {
-  width: 85%;
-  padding: 16px;
+  width: 70%;
+  padding: 66px 16px 16px;
   margin: auto;
 }
 
@@ -21,6 +31,70 @@ p {
   text-align: justify;
 }
 
+.top {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  font-size: small;
+  font-weight: 700;
+  color: #222;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ------------------- nav ------------------- */
+/*捲軸寬度 */
+::-webkit-scrollbar {
+  width: 8px;
+  margin-right: 2px;
+}
+
+/* 捲軸背景 */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* 捲軸把手 */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 1000px;
+}
+
+/* 捲軸滑過時 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ------------------- nav ------------------- */
+nav {
+  height: 50px;
+  background: #444;
+  position: fixed;
+  width: 100%;
+}
+
+nav .row {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+nav a {
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+  margin: auto 16px;
+}
+
+nav a:first-child {
+  margin-right: auto;
+}
 /* ------------------- info ------------------- */
 #info .photo {
   width: 200px;
@@ -36,7 +110,7 @@ p {
 }
 
 #info p {
-  width: 400px;
+  /* width: 400px; */
   margin-left: 32px;
   font-size: 14px;
   font-weight: 400;
@@ -51,7 +125,8 @@ p {
 
 #skill li {
   list-style: none;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  display: flex;
 }
 
 #skill p {
@@ -67,21 +142,38 @@ p {
   margin-left: 0;
 }
 
+#skill .col {
+  width: 66%;
+}
+
 #skill .row {
   justify-content: center;
 }
 
 #skill .front {
-  width: 400px;
   display: flex;
 }
 
 #skill .front .col {
-  width: 200px;
+  width: 50%;
 }
 
 #skill .col:nth-of-type(2) {
   width: 200px;
+}
+
+#skill .col:nth-of-type(2) ul {
+  margin-bottom: 32px;
+}
+
+/* ------------------- 經歷 ------------------- */
+#experience .row {
+  margin: 64px 0;
+}
+
+#experience .col {
+  width: 50%;
+  margin-left: 64px;
 }
 
 /* ------------------- 作品集 ------------------- */
@@ -91,13 +183,13 @@ p {
 }
 
 #portfolio .card {
-  width: 350px;
+  width: 380px;
   border: 1px solid #fff;
   /* border-radius: 16px; */
 }
 
 #portfolio .biong {
-  width: 732px;
+  width: 100%;
   margin: auto;
 }
 
@@ -161,4 +253,15 @@ p {
 #portfolio .card:hover .img2 {
   opacity: 1;
   display: inline;
+}
+
+/* ------------------- footer ------------------- */
+footer {
+  height: 100px;
+}
+
+footer .copyright {
+  font-size: 10px;
+  text-align: center;
+  /* margin-bottom: auto; */
 }
