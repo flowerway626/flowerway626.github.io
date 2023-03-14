@@ -18,7 +18,15 @@
   <nav>
     <div class="row">
       <a href="#">LIN YA HUANG</a>
-      <a href="#info">關於我</a>
+
+      <select name="a" id="scroll" onChange="window.location.replace(this.value)">
+        <option value="#info">關於我</option>
+        <option value="#skill">技能</option>
+        <option value="#experience">經歷</option>
+        <option value="#portfolio">作品集</option>
+        <option value="#footer">聯繫方式</option>
+      </select>
+      <a href="#">關於我</a>
       <a href="#skill">技能</a>
       <a href="#experience">經歷</a>
       <a href="#portfolio">作品集</a>
@@ -30,12 +38,12 @@
     <!-- about -->
     <section id="info">
       <div class="row">
-        <div class="col">
-          <img class="photo" src="./images/photo.jpg" alt="profile photo">
+        <div class="col photo">
+          <img src="./images/photo.jpg" alt="profile photo">
         </div>
         <div class="col">
           <h1>黃 琳 雅</h1>
-          <p>在校期間曾選修網頁設計課程，對於程式語言逐漸產生興趣，畢業後參與為期半年的專業訓練，習得 HTML、CSS、JavaScript、jQuery，以 Bootstrap 建置 RWD 響應式網頁，串接 API
+          <p>在校期間曾選修網頁設計課程，對程式語言逐漸產生興趣，畢業後參與為期半年的專業訓練，習得 HTML、CSS、JavaScript、jQuery，以 Bootstrap 建置 RWD 響應式網頁，串接 API
             資料或後端資料庫及使用前端框架，可以透過 Vue.js、Node.js 與 MongoDB 建立一個具前後端功能的專題網站。</p>
           <p>在網頁開發的過程中，深知在前端開發還有許多需要不斷精進的地方，期許自己能持續成長，成為獨當一面的前端工程師。</p>
           <!-- <div class="row">
@@ -72,40 +80,47 @@
                   CSS</li>
               </ul>
             </div>
+            <div class="col">
+              <ul>
+                <li><img src="https://api.iconify.design/skill-icons/pug-dark.svg?width=24" alt="pug">&ensp;Pug</li>
+                <li><img src="https://api.iconify.design/skill-icons/vuejs-light.svg?width=24" alt="vuejs">&ensp;Vue.js
+                </li>
+                <li><img src="https://api.iconify.design/logos/vuetifyjs.svg?width=24" alt="vuetify">&ensp;Vuetify
+                </li>
+                <li><img src="https://api.iconify.design/vscode-icons/file-type-quasar.svg?color=%236792ba&width=24"
+                    alt="quasar">&ensp;Quasar
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="back-other">
+          <div class="col">
+            <p>後端技術</p>
+            <hr>
             <ul>
-              <li><img src="https://api.iconify.design/skill-icons/pug-dark.svg?width=24" alt="pug">&ensp;Pug</li>
-              <li><img src="https://api.iconify.design/skill-icons/vuejs-light.svg?width=24" alt="vuejs">&ensp;Vue.js
+              <li><img src="https://api.iconify.design/skill-icons/nodejs-dark.svg?width=24" alt="nodejs">&ensp;Node.js
               </li>
-              <li><img src="https://api.iconify.design/logos/vuetifyjs.svg?width=24" alt="vuetify">&ensp;Vuetify
+              <li><img src="https://api.iconify.design/skill-icons/mongodb.svg?width=24" alt="mongodb">&ensp;MongoDB
               </li>
-              <li><img src="https://api.iconify.design/vscode-icons/file-type-quasar.svg?color=%236792ba&width=24"
-                  alt="quasar">&ensp;Quasar
+            </ul>
+
+          </div>
+          <div class="col">
+            <p>視覺設計</p>
+            <hr>
+            <ul>
+              <li><img src="https://api.iconify.design/skill-icons/figma-dark.svg?width=24" alt="figma"><span>&ensp;
+                  Figma</span>
+              </li>
+              <li><img src="https://api.iconify.design/skill-icons/illustrator.svg?width=24" alt="illustrator">
+                <span>&ensp;Illustrator</span>
+              </li>
+              <li><img src="https://api.iconify.design/skill-icons/photoshop.svg?width=24" alt="photoshop">
+                <span>&ensp;Photoshop</span>
               </li>
             </ul>
           </div>
-        </div>
-        <div class="col">
-          <p>後端技術</p>
-          <hr>
-          <ul>
-            <li><img src="https://api.iconify.design/skill-icons/nodejs-dark.svg?width=24" alt="nodejs">&ensp;Node.js
-            </li>
-            <li><img src="https://api.iconify.design/skill-icons/mongodb.svg?width=24" alt="mongodb">&ensp;MongoDB</li>
-          </ul>
-
-          <p>視覺設計</p>
-          <hr>
-          <ul>
-            <li><img src="https://api.iconify.design/skill-icons/figma-dark.svg?width=24" alt="figma"><span>&ensp;
-                Figma</span>
-            </li>
-            <li><img src="https://api.iconify.design/skill-icons/illustrator.svg?width=24" alt="illustrator">
-              <span>&ensp;Illustrator</span>
-            </li>
-            <li><img src="https://api.iconify.design/skill-icons/photoshop.svg?width=24" alt="photoshop">
-              <span>&ensp;Photoshop</span>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -131,60 +146,61 @@
     <!-- 作品集 -->
     <section id="portfolio">
       <h1 class="text-center">作 品 集</h1>
-      <a href="https://flowerway626.github.io/biong-front/#/">
-        <div class="card biong">
-          <!-- <div class="row"> -->
-          <div class="info">
-            <h3>專題製作 - Biong Biong</h3>
-            <p>
-              為了解決韓國綜藝《Biong Biong 地球娛樂室》原官網為電視台統一樣式，操作不直覺、動態更新不及時的問題，使用 Vue.js、Node.js、MongoDB 及 前端框架
-              Quasar 以及其他第三方套件，建置一個結合節目設定的設計風格、整合活動、周邊販售的獨立專屬官方網站。
-            </p>
-          </div>
-          <img class="img1" src="./images/biong.png" alt="biong">
-          <img class="img1" src="./images/biong new.png" alt="biong">
-          <img class="img1" src="./images/biong product.png" alt="biong">
-          <img class="img2" src="./images/biong cart.png" alt="biong">
-          <img class="img2" src="./images/biong back.png" alt="biong">
-          <img class="img2" src="./images/biong about.png" alt="biong">
-          <!-- <img class="img1" src="./images/biong.png" alt="pomodoro"> -->
-          <!-- <div class="col"> -->
-          <div class="info">
-            <div class="row">
-              <div class="col">
-                <h4>前台</h4>
-                <ul>
-                  <li>會員登入 / 註冊</li>
-                  <li>節目資訊介紹</li>
-                  <li>最新消息</li>
-                  <li>購物車新增商品 / 修改數量</li>
-                  <li>選購周邊商品</li>
-                  <li>會員報名活動</li>
-                </ul>
+      <div class="row">
+        <!-- biong biong -->
+        <div class="col">
+          <a href="https://flowerway626.github.io/biong-front/#/">
+            <div class="card biong">
+              <!-- <div class="row"> -->
+              <div class="info">
+                <h3>專題製作 - Biong Biong</h3>
+                <p>
+                  為了解決韓國綜藝《Biong Biong 地球娛樂室》原官網為電視台統一樣式，操作不直覺、動態更新不及時的問題，使用 Vue.js、Node.js、MongoDB 及 前端框架
+                  Quasar 以及其他第三方套件，建置一個結合節目設定的設計風格、整合活動、周邊販售的獨立專屬官方網站。
+                </p>
               </div>
-              <div class="col">
-                <h4>後台</h4>
-                <ul>
-                  <li>會員 查看報名活動、訂單明細、資料修改</li>
-                  <li>管理者 會員資料、商品管理</li>
-                  <li>管理者 頁面(公告、活動、相簿)管理</li>
-                  <li>管理者 訂單明細查詢</li>
-                  <li>管理者 資料統計</li>
-                </ul>
+              <div class="img">
+                <img class="img1" src="./images/biong.png" alt="biong">
+                <img class="img1" src="./images/biong new.png" alt="biong">
+                <img class="img1" src="./images/biong product.png" alt="biong">
+                <img class="img2" src="./images/biong cart.png" alt="biong">
+                <img class="img2" src="./images/biong back.png" alt="biong">
+                <img class="img2" src="./images/biong about.png" alt="biong">
+              </div>
+              <div class="info">
+                <div class="row">
+                  <div class="col">
+                    <h4>前台</h4>
+                    <ul>
+                      <li>會員登入 / 註冊</li>
+                      <li>節目資訊介紹</li>
+                      <li>最新消息</li>
+                      <li>購物車新增商品 / 修改數量</li>
+                      <li>選購周邊商品</li>
+                      <li>會員報名活動</li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <h4>後台</h4>
+                    <ul>
+                      <li>會員 查看報名活動、訂單明細、資料修改</li>
+                      <li>管理者 會員資料、商品管理</li>
+                      <li>管理者 頁面(公告、活動、相簿)管理</li>
+                      <li>管理者 訂單明細查詢</li>
+                      <li>管理者 資料統計</li>
+                    </ul>
+                  </div>
+                </div>
+                <span>Vue.js</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>JavaScript</span>
+                <span>Pug</span>
+                <span>Sass</span>
               </div>
             </div>
-            <span>Vue.js</span>
-            <span>Node.js</span>
-            <span>MongoDB</span>
-            <span>JavaScript</span>
-            <span>Pug</span>
-            <span>Sass</span>
-          </div>
+          </a>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
-      </a>
-      <div class="row">
         <!-- pomodoro -->
         <div class="col">
           <a href="https://flowerway626.github.io/vuetify-pomodoro/#/">
@@ -303,13 +319,42 @@
     </section>
   </div>
 
-  <footer>
+  <footer id="footer">
+    <div class="contact">
+      <div class="col">
+        <h1>聯繫方式</h1>
+      </div>
+      <div class="col">
+        <a class="row" href="mailto:hlinya719@gmail.com">
+          <img src="https://api.iconify.design/fxemoji/email.svg?width=24" alt="email">&ensp;
+          <p>hlinya719@gmail.com</p>
+        </a>
+        <a class="row" href="https://github.com/flowerway626">
+          <img src="https://api.iconify.design/skill-icons/github-dark.svg?width=24" alt="github">&ensp;
+          <p>https://github.com/flowerway626</p>
+        </a>
+      </div>
+    </div>
     <p class="copyright">Copyright © 2023 LIN YA HUANG. All rights reserved.</p>
   </footer>
   <!-- <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" -->
   <!-- integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" -->
   <!-- crossorigin="anonymous"></script> -->
+  <script>
+    const scroll = document.getElementById('scroll')
+    window.addEventListener('scroll', () => {
+      if (window.scrollY <= 600) {
+        scroll.value = '#info'
+      } else if (window.scrollY <= 1350) {
+        scroll.value = '#skill'
+      } else if (window.scrollY <= 1730) {
+        scroll.value = '#experience'
+      } else {
+        scroll.value = '#portfolio'
+      }
+    })
+  </script>
 </body>
 
 </html>
