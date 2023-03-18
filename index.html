@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="./css/style.css">
   <title>LIN's profile</title>
 </head>
@@ -36,15 +35,15 @@
 
   <div class="container">
     <!-- about -->
-    <section id="info">
+    <section id="info" data-aos="fade-down" data-aos-duration="1200">
       <div class="row">
         <div class="col photo">
           <img src="./images/photo.jpg" alt="profile photo">
         </div>
         <div class="col">
           <h1>黃 琳 雅</h1>
-          <p>在校期間曾選修網頁設計課程，對程式語言逐漸產生興趣，畢業後參與為期半年的專業訓練，習得 HTML、CSS、JavaScript、jQuery，以 Bootstrap 建置 RWD 響應式網頁，串接 API
-            資料或後端資料庫及使用前端框架，可以透過 Vue.js、Node.js 與 MongoDB 建立一個具前後端功能的專題網站。</p>
+          <p>在校期間曾選修網頁設計課程，對程式語言逐漸產生興趣，畢業後參與為期半年的專業訓練，習得 HTML、CSS、JavaScript、jQuery、以 Bootstrap 建置 RWD 響應式網頁，能串接 API
+            資料或後端資料庫及使用前端框架，透過 Vue.js、Node.js 與 MongoDB 建立一個具前後端功能的專題網站。</p>
           <p>在網頁開發的過程中，深知在前端開發還有許多需要不斷精進的地方，期許自己能持續成長，成為獨當一面的前端工程師。</p>
           <!-- <div class="row">
             <div class="row">
@@ -61,7 +60,7 @@
     </section>
 
     <!-- 技能 -->
-    <section id="skill">
+    <section id="skill" data-aos="flip-left" data-aos-delay="800">
       <h1 class="text-center">技 能</h1>
       <div class="row">
         <div class="col">
@@ -126,18 +125,18 @@
     </section>
 
     <!-- 經歷 -->
-    <section id="experience">
+    <section id="experience" data-aos="zoom-in">
       <h1 class="text-center">經 歷</h1>
       <div class="row">
         <div class="col">
-          <span>2022.09 ~ 2023.03</span>
-          <p>前端網頁開發技術(青年專班)第02期</p>
-          <span>勞動力發展署北基宜花金馬分署</span>
+          <p>前端網頁開發技術(青年專班)第02期</p><br>
+          <p>勞動力發展署北基宜花金馬分署</p><br>
+          <p>2022.09 ~ 2023.03</p>
         </div>
         <div class="col">
-          <span>2018.09 ~ 2022.06</span>
-          <p>商務科技管理系</p>
-          <span>致理科技大學</span>
+          <p>商務科技管理系</p><br>
+          <p>致理科技大學</p><br>
+          <p>2018.09 ~ 2022.06</p>
         </div>
       </div>
     </section>
@@ -145,13 +144,12 @@
 
     <!-- 作品集 -->
     <section id="portfolio">
-      <h1 class="text-center">作 品 集</h1>
+      <h1 class="text-center" data-aos="flip-down">作 品 集</h1>
       <div class="row">
         <!-- biong biong -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://flowerway626.github.io/biong-front/#/">
             <div class="card biong">
-              <!-- <div class="row"> -->
               <div class="info">
                 <h3>專題製作 - Biong Biong</h3>
                 <p>
@@ -191,26 +189,30 @@
                     </ul>
                   </div>
                 </div>
-                <span>Vue.js</span>
-                <span>Node.js</span>
-                <span>MongoDB</span>
-                <span>JavaScript</span>
-                <span>Pug</span>
-                <span>Sass</span>
+                <div class="tags">
+                  <span>Vue.js</span>
+                  <span>Node.js</span>
+                  <span>MongoDB</span>
+                  <span>JavaScript</span>
+                  <span>Pug</span>
+                  <span>Sass</span>
+                </div>
               </div>
             </div>
           </a>
         </div>
+
         <!-- pomodoro -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://flowerway626.github.io/vuetify-pomodoro/#/">
             <div class="card">
               <img class="img1" src="./images/pomodoro.png" alt="pomodoro">
               <img class="img2" src="./images/pomodoro2.png" alt="pomodoro">
               <div class="info">
                 <h3>番茄鐘</h3>
+                <hr>
                 <p>
-                  以 Vue.js 使用 Vuetify 前端框架建立一個番茄鐘網站，可新增事項、查看待完成 / 已完成、選擇是否開啟鈴聲提醒，即切換網站的淺深色模式。
+                  以 Vue.js 使用 Vuetify 前端框架建立一個番茄鐘網站，可新增事項、查看待完成 / 已完成、選擇是否開啟鈴聲提醒，及切換網站的深淺色模式。
                 </p>
                 <span>JavaScript</span>
                 <span>Vue.js</span>
@@ -222,13 +224,14 @@
         </div>
 
         <!-- LINEBOT -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://lin.ee/DiVhNRV">
             <div class="card">
               <img class="img1" src="./images/linbot.png" alt="linbot">
               <img class="img2" src="./images/linbot2.png" alt="linbot">
               <div class="info">
                 <h3>LINEBOT - 影劇查詢平台 好劇上場</h3>
+                <hr>
                 <p>
                   透用 API 串接網站資料建立 LINEBOT 機器人，可查詢台、韓、中、美、日、英的 TOP12 最新或人氣排行、影劇的詳細資訊，以及上架的 OTT 平台。
                 </p>
@@ -239,13 +242,14 @@
         </div>
 
         <!-- click -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://flowerway626.github.io/jquery-click/">
             <div class="card">
               <img class="img1" src="./images/click.png" alt="clcik">
               <img class="img2" src="./images/click2.png" alt="clcik">
               <div class="info">
                 <h3>點擊遊戲</h3>
+                <hr>
                 <p>
                   選擇 2 位角色，在 30 秒內達到指定的目標點擊數，點擊到獲得 1 分， 難度為 HARD 時 點即到非選擇角色倒扣 1 分。以累計分數作為計算，分數最高且達到目標點擊數才可列入排行。
                 </p>
@@ -258,13 +262,14 @@
         </div>
 
         <!-- card -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://flowerway626.github.io/jquery-card/">
             <div class="card">
               <img class="img1" src="./images/card.png" alt="card">
               <img class="img2" src="./images/card2.png" alt="card">
               <div class="info">
                 <h3>翻牌遊戲</h3>
+                <hr>
                 <p>
                   六種主題的卡牌可作選擇，翻開相同的卡牌即配對成功，時間內配對完成進入下一關，共有五種 LEVEL。
                   以累計每關花費的時間作為分數計算，在相同 LEVEL 花費最少的時間就能成為贏家。
@@ -278,13 +283,14 @@
         </div>
 
         <!-- calculator -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://flowerway626.github.io/Javascript-/hw-calculator.html">
             <div class="card">
               <img class="img1" src="./images/calculator.png" alt="calculator">
               <img class="img2" src="./images/calculator2.jpg" alt="calculator">
               <div class="info">
                 <h3>簡易計算機</h3>
+                <hr>
                 <p>
                   以 JavaSript 搭配 CSS 建置簡易的線上計算機，右上角顯示最近一筆紀錄，點擊左上角 ≡ 可以開啟歷史紀錄查看。
                 </p>
@@ -297,13 +303,14 @@
         </div>
 
         <!-- RWD -->
-        <div class="col">
+        <div class="col" data-aos="flip-down">
           <a href="https://flowerway626.github.io/bootstrap-RWD/">
             <div class="card">
               <img class="img1" src="./images/rwd.png" alt="rwd">
               <img class="img2" src="./images/rwd2.png" alt="rwd">
               <div class="info">
                 <h3>排版 RWD</h3>
+                <hr>
                 <p>
                   使用前端開發工具 Bootstrap 建立網頁，加入 RWD 響應式設計，並透過套件 AOS 新增視覺滾差效果及 Swiper 建立幻燈片輪播。
                 </p>
@@ -335,17 +342,18 @@
         </a>
       </div>
     </div>
-    <p class="copyright">Copyright © 2023 LIN YA HUANG. All rights reserved.</p>
   </footer>
-  <!-- <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" -->
-  <!-- integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" -->
-  <!-- crossorigin="anonymous"></script> -->
+  <p class="copyright">Copyright © 2023 LIN YA HUANG. All rights reserved.</p>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     const scroll = document.getElementById('scroll')
+    const arrowTop = document.querySelector('.top')
     window.addEventListener('scroll', () => {
-      if (window.scrollY <= 600) {
+      if (window.scrollY <= 300) {
+        arrowTop.style.display = 'none'
+      } else if (window.scrollY <= 600) {
         scroll.value = '#info'
+        arrowTop.style.display = 'flex'
       } else if (window.scrollY <= 1350) {
         scroll.value = '#skill'
       } else if (window.scrollY <= 1730) {
@@ -354,6 +362,8 @@
         scroll.value = '#portfolio'
       }
     })
+
+    AOS.init();
   </script>
 </body>
 

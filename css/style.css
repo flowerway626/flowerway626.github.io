@@ -1,13 +1,18 @@
+@font-face {
+  font-family: 'JF-HUN';
+  src: url('JF-OPENHUNINN-1.1.TTF');
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #222;
-  color: white;
+  background: #eee;
+  color: #222;
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'JF-HUN';
 }
 
 section {
@@ -32,6 +37,19 @@ p {
   text-align: justify;
 }
 
+h1 {
+  color: #031059;
+  padding: 4px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 16px;
+}
+
+hr {
+  border: 0.5px solid #031059;
+}
+
 .top {
   width: 40px;
   height: 40px;
@@ -47,6 +65,7 @@ p {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  z-index: 500;
 }
 
 /* ------------------- scrollbar ------------------- */
@@ -74,9 +93,17 @@ p {
 /* ------------------- nav ------------------- */
 nav {
   height: 50px;
-  background: #444;
+  background: #031059;
   position: fixed;
   width: 100%;
+  z-index: 500;
+}
+
+nav select {
+  background: #031059;
+  border: none;
+  color: #f2f2f2;
+  font-size: 16px;
 }
 
 nav .row {
@@ -87,7 +114,7 @@ nav .row {
 }
 
 nav a {
-  color: #fff;
+  color: #f2f2f2;
   text-decoration: none;
   margin: auto 16px;
   display: none;
@@ -114,14 +141,20 @@ nav a:first-child {
 
 #info h1 {
   font-weight: 500;
+  font-size: 32px;
+  margin: 0;
 }
 
 #info p {
   font-size: 14px;
   font-weight: 400;
   text-indent: 2rem;
+  line-height: 1.8;
 }
 /* ------------------- 技能 ------------------- */
+#skill p {
+  color: #031059;
+}
 #skill ul {
   margin: 0;
   padding: 0;
@@ -142,23 +175,59 @@ nav a:first-child {
 }
 
 /* ------------------- 經歷 ------------------- */
-#experience .row {
-  margin: 64px 0;
+#experience .col {
+  border-radius: 32px;
+  padding: 16px;
+  margin: 24px;
+  box-shadow: 0px 0px 4px #333;
+  position: relative;
+}
+
+#experience .col::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url('../images/wda.png') no-repeat right/30%;
+}
+
+#experience .col:last-child::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  background: url('../images/chihlee.png') no-repeat right/30%;
+}
+
+#experience p {
+  font-size: 14px;
+  background: #f2f2f2;
+  display: inline-block;
+}
+
+#experience p:first-child {
+  font-size: 16px;
+  color: #031059;
 }
 
 /* ------------------- 作品集 ------------------- */
-#portfolio .row {
-  display: flex;
-}
 
 #portfolio a {
-  color: #fff;
+  color: #222;
   text-decoration: none;
 }
 
-#portfolio .card {
-  /* max-width: 380px; */
-  border: 1px solid #fff;
+#portfolio .col:not(.biong .col) {
+  /* background: white; */
+  box-shadow: 0px 0px 4px #333;
   border-radius: 32px;
 }
 
@@ -199,7 +268,7 @@ nav a:first-child {
 }
 
 #portfolio .biong img {
-  width: 33%;
+  width: 33.33333%;
   height: 25%;
   border-radius: 0;
 }
@@ -208,12 +277,21 @@ nav a:first-child {
   display: none;
 }
 
+#portfolio .biong ul {
+  padding-left: 16px;
+}
+
+#portfolio li {
+  margin-bottom: 4px;
+}
+
 #portfolio .card .info {
-  margin: 16px;
+  padding: 24px;
 }
 #portfolio .card .info h3 {
   margin: 0 0 8px;
   font-weight: 500;
+  color: #031059;
 }
 
 #portfolio .card p {
@@ -224,10 +302,20 @@ nav a:first-child {
 
 #portfolio .card span {
   padding: 5px 10px;
-  border: 1px solid #eee;
+  color: #031059;
+  background: #03105911;
   border-radius: 150px;
   font-size: 4px;
   margin-right: 4px;
+}
+
+#portfolio .tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#portfolio .tags span {
+  margin-bottom: 8px;
 }
 
 #portfolio .card:hover .img1 {
@@ -239,6 +327,11 @@ nav a:first-child {
 
 /* ------------------- footer ------------------- */
 #footer {
+  background-color: #03105911;
+  padding: 16px 0;
+}
+
+#footer.contact {
   width: 70%;
   height: 100px;
   margin: auto;
@@ -246,17 +339,21 @@ nav a:first-child {
 
 #footer .contact .row {
   display: flex;
+  padding-left: 16px;
 }
 
 #footer .contact a {
   text-decoration: none;
-  color: #fff;
+  color: #222;
 }
 
-#footer .copyright {
-  font-size: 10px;
+.copyright {
+  background: #031059;
   text-align: center;
-  padding-bottom: 10px;
+  color: #eee;
+  font-size: 10px;
+  margin: 0;
+  padding: 4px 0;
 }
 /* ------------------- RWD ------------------- */
 @media (min-width: 576px) {
@@ -307,7 +404,6 @@ nav a:first-child {
   #skill .front .col,
   #experience .col {
     width: 50%;
-    margin-left: 64px;
   }
 
   #skill .back-other .col {
