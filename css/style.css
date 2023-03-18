@@ -23,6 +23,11 @@ section {
   padding-top: 50px;
 }
 
+::selection {
+  background: #03105988;
+  color: #eee;
+}
+
 .text-center {
   text-align: center;
 }
@@ -38,12 +43,13 @@ p {
 }
 
 h1 {
+  background: #03105933;
   color: #031059;
   padding: 4px 16px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 24px;
-  margin: 16px;
+  margin: 16px 0;
 }
 
 hr {
@@ -56,16 +62,18 @@ hr {
   background: #fff;
   font-size: small;
   font-weight: 700;
-  color: #222;
+  color: #031059;
   position: fixed;
   bottom: 32px;
   right: 32px;
+  border: 1px solid #031059;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   z-index: 500;
+  transition: 0.3s;
 }
 
 /* ------------------- scrollbar ------------------- */
@@ -104,6 +112,13 @@ nav select {
   border: none;
   color: #f2f2f2;
   font-size: 16px;
+  font-family: 'JF-HUN';
+  text-align: center;
+}
+
+nav select option {
+  background: #eee;
+  color: #031059;
 }
 
 nav .row {
@@ -128,6 +143,7 @@ nav a:first-child {
 #info .photo,
 #info h1 {
   text-align: center;
+  background: none;
 }
 
 #info .photo img {
@@ -140,13 +156,12 @@ nav a:first-child {
 }
 
 #info h1 {
-  font-weight: 500;
   font-size: 32px;
-  margin: 0;
+  margin: 16px 0;
 }
 
 #info p {
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 400;
   text-indent: 2rem;
   line-height: 1.8;
@@ -160,17 +175,22 @@ nav a:first-child {
   padding: 0;
 }
 
-#skill li {
+#skill li,
+#skill p {
   list-style: none;
   margin-bottom: 16px;
   display: flex;
+}
+
+#skill p span {
+  font-size: 18px;
 }
 
 #skill hr {
   margin-bottom: 16px;
 }
 
-#skill .col:nth-of-type(2) ul {
+#skill .col ul:not(#skill .front .col:first-child ul) {
   margin-bottom: 32px;
 }
 
@@ -179,7 +199,8 @@ nav a:first-child {
   border-radius: 32px;
   padding: 16px;
   margin: 24px;
-  box-shadow: 0px 0px 4px #333;
+  box-shadow: 0px 0px 4px #555;
+  border: 1px solid #031059;
   position: relative;
 }
 
@@ -208,14 +229,19 @@ nav a:first-child {
 }
 
 #experience p {
-  font-size: 14px;
+  font-size: 16px;
+  margin: 8px 0;
   background: #f2f2f2;
   display: inline-block;
 }
 
 #experience p:first-child {
-  font-size: 16px;
+  font-size: 18px;
   color: #031059;
+}
+
+#experience p:last-child {
+  font-size: 14px;
 }
 
 /* ------------------- 作品集 ------------------- */
@@ -226,14 +252,15 @@ nav a:first-child {
 }
 
 #portfolio .col:not(.biong .col) {
-  /* background: white; */
-  box-shadow: 0px 0px 4px #333;
+  background: #eee;
+  box-shadow: 0px 0px 4px #555;
+  border: 1px solid #031059;
   border-radius: 32px;
+  margin: 16px;
 }
 
 #portfolio .biong {
   width: 100%;
-  min-width: 380px;
   margin: auto;
 }
 
@@ -247,8 +274,9 @@ nav a:first-child {
   justify-content: space-around;
 }
 
-#portfolio .col {
-  margin: 16px;
+#portfolio .card {
+  transition: 0.3s;
+  border-radius: 32px;
 }
 
 #portfolio .biong h4 {
@@ -265,10 +293,10 @@ nav a:first-child {
 
 #portfolio .biong .img {
   display: flex;
+  flex-wrap: wrap;
 }
 
 #portfolio .biong img {
-  width: 33.33333%;
   height: 25%;
   border-radius: 0;
 }
@@ -282,7 +310,7 @@ nav a:first-child {
 }
 
 #portfolio li {
-  margin-bottom: 4px;
+  line-height: 1.8;
 }
 
 #portfolio .card .info {
@@ -290,13 +318,12 @@ nav a:first-child {
 }
 #portfolio .card .info h3 {
   margin: 0 0 8px;
-  font-weight: 500;
+  font-weight: 600;
   color: #031059;
 }
 
 #portfolio .card p {
   font-weight: 300;
-  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -318,6 +345,25 @@ nav a:first-child {
   margin-bottom: 8px;
 }
 
+#portfolio .card:hover {
+  background: #03105988;
+  transition: 0.3s;
+  color: #eee;
+}
+
+#portfolio .card:hover span {
+  color: #eee;
+  border: 1px solid #eee;
+}
+
+#portfolio .card:hover hr {
+  border: 1px solid #eee;
+}
+
+#portfolio .card:hover h3 {
+  color: #eee;
+}
+
 #portfolio .card:hover .img1 {
   display: none;
 }
@@ -335,6 +381,11 @@ nav a:first-child {
   width: 70%;
   height: 100px;
   margin: auto;
+}
+
+#footer .contact h1 {
+  margin: 0 16px;
+  text-align: center;
 }
 
 #footer .contact .row {
@@ -377,6 +428,7 @@ nav a:first-child {
 
   #info h1 {
     text-align: left;
+    margin: 0;
   }
 
   #info h1,
@@ -410,6 +462,7 @@ nav a:first-child {
     width: 50%;
   }
 
+  #skill .front ul,
   #skill .back-other ul {
     margin-left: 64px;
   }
@@ -426,9 +479,14 @@ nav a:first-child {
     width: 80vw;
   }
 
+  #portfolio .biong .img img {
+    width: 33.33333%;
+  }
+
   #footer .contact:not(#footer .contact .row) {
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
 }
 
@@ -455,7 +513,7 @@ nav a:first-child {
     width: 50%;
   }
 
-  #skill .front .col,
+  #skill .front ul,
   #skill .back-other ul {
     margin-left: 0;
   }
